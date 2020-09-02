@@ -6,14 +6,13 @@ from datetime import datetime
 import pandas as pd
 import requests
 
-from weather_types import Units
+from darksky.weather_types import Units
 
 HOST = 'https://api.darksky.net/forecast'
 API_KEY = os.environ.get('DARKSKY_API_KEY')
 
 latitude: float = 26.5833
 longitude: float = 87.9167
-latlng = '26.5833,87.9167'
 location = 'jhapa'
 
 
@@ -52,7 +51,7 @@ def get_url(latitude: float, longitude: float, time=None, units='auto', **params
     )
 
 
-def extract_weather_data(url, api_key, latlng, target_date, days=None):
+def extract_weather_data(url, api_key, lat, lng, target_date, days=None):
     records = []
 
     # request = url.format(api_key, latlng,
@@ -109,7 +108,7 @@ def data_to_csv(weather_data, data_dir, weather_data_type: str):
 
 def main():
     target_date = datetime.now()
-    extract_weather_data(HOST, API_KEY, latlng, target_date)
+    extract_weather_data(HOST, API_KEY, latitude, longitude, target_date)
 
 
 if __name__ == '__main__':
