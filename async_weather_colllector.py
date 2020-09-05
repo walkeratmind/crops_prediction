@@ -29,6 +29,17 @@ def timer(func):
 
 
 def build_url(host, api_key, latitude: float, longitude: float, timestamp=None, units='auto', **params):
+    """
+
+    :param host:
+    :param api_key:
+    :param latitude:
+    :param longitude:
+    :param timestamp:
+    :param units:
+    :param params:
+    :return:
+    """
     if timestamp is None:
         return "{host}/{api_key}/{latitude},{longitude}?units={units}".format(
             host=host,
@@ -48,7 +59,14 @@ def build_url(host, api_key, latitude: float, longitude: float, timestamp=None, 
     )
 
 
-def data_to_csv(weather_data, data_dir,target_date, filename=None):
+def data_to_csv(weather_data, data_dir, target_date, filename=None):
+    """
+
+    :param weather_data:
+    :param data_dir:
+    :param target_date:
+    :param filename:
+    """
     week_data = []
     for data in weather_data:
         data['time'] = datetime.fromtimestamp(data['time'])
@@ -81,6 +99,11 @@ async def fetch(session, url):
 
 
 async def fetch_all(urls):
+    """
+
+    :param urls:
+    :return:
+    """
     try:
         async with aiohttp.ClientSession() as session:
             tasks = [fetch(session=session, url=url) for url in urls]
@@ -94,6 +117,12 @@ async def fetch_all(urls):
 
 @timer
 def async_get_weather_forecast(urls, station_list, target_date_timestamp=None):
+    """
+
+    :param urls:
+    :param station_list:
+    :param target_date_timestamp:
+    """
     print("Fetch weather data...")
     responses = asyncio.run(fetch_all(urls))
 
@@ -136,7 +165,6 @@ def async_get_weather_forecast(urls, station_list, target_date_timestamp=None):
                                            place['formal_name']),
                     target_date)
 
-
         latlng = {'lat': response_data_lat, 'long': response_data_long}
         daily_data_list.append({**place, **latlng, **daily_data})
     # write daily data to csv
@@ -144,11 +172,13 @@ def async_get_weather_forecast(urls, station_list, target_date_timestamp=None):
     write_daily_data_to_csv(daily_data_list, data_dir, target_date)
 
 
-
-def write_daily_data_to_csv(daily_data:list, data_dir, target_date):
+def write_daily_data_to_csv(daily_data: list, data_dir, target_date):
     """
     Write Daily data to single csv
     CSV Columns: district, formal_name, lat, lng, response data_attrs
+    :param daily_data:
+    :param data_dir:
+    :param target_date:
     """
 
     daily_data_dir = data_dir + '/daily'
@@ -157,12 +187,11 @@ def write_daily_data_to_csv(daily_data:list, data_dir, target_date):
         os.makedirs(daily_data_dir)
 
     filename = '{}/{}.csv'.format(daily_data_dir,
-                                target_date.strftime('%Y-%m-%d'))
+                                  target_date.strftime('%Y-%m-%d'))
 
     daily_dataframe = pd.DataFrame(daily_data)
 
     daily_dataframe.to_csv(filename)
-
 
 
 def main():
