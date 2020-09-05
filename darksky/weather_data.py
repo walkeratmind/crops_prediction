@@ -7,10 +7,8 @@ import aiohttp
 import requests
 import tqdm
 
-from .Models import DailyData
 
 HOST = 'https://api.darksky.net/forecast'
-# API_KEY = os.environ.get('DARK_SKY_API_KEY')
 API_KEY = os.environ.get('DARKSKY_API_KEY')
 
 latitude: float = 26.5833
@@ -78,7 +76,7 @@ async def fetch(session, url):
 async def fetch_all(url, api_key, latlng, target_date, days):
     async with aiohttp.ClientSession() as session:
         tasks = []
-        for _ in tqdm.tqdm(range(days)):
+        for _ in range(days):
             api_endpoint = url.format(api_key, latlng,
                                       target_date.strftime('%Y-%m-%dT%H:%M:%S')
                                       )
@@ -99,10 +97,10 @@ def async_get_forecast(url, api_key, latlng):
 @timer
 def async_get_time_machine_forecast(url, api_key, latlng, target_date, days):
     responses = asyncio.run(fetch_all(url, api_key, latlng, target_date, days))
-    return responses
+    print(responses)
 
 
 target_date = datetime.now()
 # extract_weather_data(HOST, API_KEY, latlng, target_date, 5)
-# responses = async_get_time_machine_forecast(HOST, API_KEY, latlng, target_date, 5)
+async_get_time_machine_forecast(HOST, API_KEY, latlng, target_date, 5)
 # print(responses)

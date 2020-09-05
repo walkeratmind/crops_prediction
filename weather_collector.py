@@ -6,10 +6,10 @@ from datetime import datetime
 import pandas as pd
 import requests
 
-from darksky.weather_types import Units
+from darksky.weather_tag import Units
 
-HOST = 'https://api.darksky.net/forecast'
-API_KEY = os.environ.get('DARKSKY_API_KEY')
+host = 'https://api.darksky.net/forecast'
+api_key = os.environ.get('DARKSKY_API_KEY')
 
 latitude: float = 26.5833
 longitude: float = 87.9167
@@ -31,33 +31,33 @@ def timer(func):
     return wrapper_timer
 
 
-def get_url(latitude: float, longitude: float, time=None, units='auto', **params):
-    if time is None:
+def build_url(host, api_key, latitude: float, longitude: float, timestamp=None, units='auto', **params):
+    if timestamp is None:
         return "{host}/{api_key}/{latitude},{longitude}?units={units}".format(
-            host=HOST,
-            api_key=API_KEY,
+            host=host,
+            api_key=api_key,
             latitude=latitude,
             longitude=longitude,
             units=units
         )
 
     return "{host}/{api_key}/{latitude},{longitude},{time}?units={units}".format(
-        host=HOST,
-        api_key=API_KEY,
+        host=host,
+        api_key=api_key,
         latitude=latitude,
         longitude=longitude,
-        time=time,
+        time=timestamp,
         units=units
     )
 
 
-def extract_weather_data(url, api_key, lat, lng, target_date, days=None):
+def extract_weather_data(host, api_key, lat, long, target_date_timestamp=None, days=None):
     records = []
 
     # request = url.format(api_key, latlng,
     #                      target_date.strftime('%Y-%m-%dT%H:%M:%S')
     #                      )
-    request = get_url(latitude, longitude, units=Units.CA)
+    request = build_url(host, api_key, lat, long, target_date_timestamp, units=Units.SI)
 
     response = requests.get(request)
     if response.status_code == 200:
@@ -107,8 +107,14 @@ def data_to_csv(weather_data, data_dir, weather_data_type: str):
 
 
 def main():
-    target_date = datetime.now()
-    extract_weather_data(HOST, API_KEY, latitude, longitude, target_date)
+    """
+        Write 24 hrs  Hourly weather data starting from 1AM morning
+        When time is append in api_endpoint, api automatically sends
+        hourly data of 24 hrs only NOT 48 hrs data .
+    """
+    current_date = datetime.now()
+    morning_date = current_date.replace(hour=00, minute=00, second=00)
+    extract_weather_data(host, api_key, latitude, longitude, target_date_timestamp=int(morning_date.timestamp()))
 
 
 if __name__ == '__main__':

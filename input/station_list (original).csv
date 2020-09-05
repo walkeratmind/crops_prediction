@@ -1,5 +1,4 @@
 formal_name,district,measuring_type,log,lat,elevation (mtr)
-Dhangadhi,Kailali,NA,80.6,28.683333333333,187
 Asara Ghat,Achham,Precipitation,81.444319444444,28.950294444444,632
 Bangga Camp,Achham,Precipitation,81.149793055556,28.964648888889,1180
 Mangalsen,Achham,Climatology,81.250091666667,29.136113888889,1310
@@ -221,6 +220,7 @@ Dolal Ghat,Kabhre,Precipitation,85.704980833333,27.638821944444,659
 Dhulikhel,Kabhre,Climatology,85.565502777778,27.616116666667,1543
 Budal (Banepa),Kabhre,Precipitation,85.51666667,27.63333333,1475
 Panchkhal,Kabhre,Agrometeorology,85.620955555556,27.645202777778,857
+Dhangadhi,Kailali,NA,80.6,28.683333333333,187
 Tikapur,Kailali,Climatology,81.115119444444,28.536497222222,149
 Sandepani,Kailali,Precipitation,80.978508888889,28.664176111111,159
 Sitapur,Kailali,Precipitation,80.831765,28.554055,148
