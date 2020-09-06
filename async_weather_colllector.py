@@ -160,10 +160,10 @@ def async_get_weather_forecast(urls, station_list, target_date_timestamp=None):
                     target_date)
 
         # write weekly data to csv
-        data_to_csv(weekly_data, data_dir +
-                    '/weekly/{}/{}'.format(place['district'],
-                                           place['formal_name']),
-                    target_date)
+        # data_to_csv(weekly_data, data_dir +
+        #             '/weekly/{}/{}'.format(place['district'],
+        #                                    place['formal_name']),
+        #             target_date)
 
         latlng = {'lat': response_data_lat, 'long': response_data_long}
         daily_data_list.append({**place, **latlng, **daily_data})
