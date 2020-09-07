@@ -211,8 +211,6 @@ def write_daily_data_to_csv(daily_data: list, data_dir, target_date):
 
     daily_dataframe = pd.DataFrame(daily_data)
 
-    # remove index column
-
     # sort daily data by district and formal_name
     daily_dataframe = daily_dataframe.sort_values(by=['district', 'formal_name'])
 
