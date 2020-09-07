@@ -169,7 +169,8 @@ def async_get_weather_forecast(urls, station_list, target_date_timestamp=None):
         latlng = {'lat': response_data_lat, 'long': response_data_long}
         """
         Convert every timestamp from daily data to simple datetime
-        time, sunriseTime, sunsetTime, temperatureHighTime, temperatureLowTime,
+        time, sunriseTime, sunsetTime, precipIntensityMaxTime,
+        temperatureHighTime, temperatureLowTime,
         apparentTemperatureHighTime, apparentTemperatureLowTime,
         temperatureMinTime, temperatureMaxTime,
         apparentTemperatureMinTime, apparentTemperatureMaxTime
@@ -177,6 +178,7 @@ def async_get_weather_forecast(urls, station_list, target_date_timestamp=None):
         daily_data['time'] = datetime.fromtimestamp(daily_data['time'])
         daily_data['sunriseTime'] = datetime.fromtimestamp(daily_data['sunriseTime'])
         daily_data['sunsetTime'] = datetime.fromtimestamp(daily_data['sunsetTime'])
+        daily_data['precipIntensityMaxTime'] = datetime.fromtimestamp(daily_data['precipIntensityMaxTime'])
         daily_data['temperatureHighTime'] = datetime.fromtimestamp(daily_data['temperatureHighTime'])
         daily_data['temperatureLowTime'] = datetime.fromtimestamp(daily_data['temperatureLowTime'])
         daily_data['apparentTemperatureHighTime'] = datetime.fromtimestamp(daily_data['apparentTemperatureHighTime'])
