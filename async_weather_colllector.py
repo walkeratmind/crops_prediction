@@ -203,7 +203,7 @@ def main():
         urls.append(
             build_url(HOST, API_KEY, station['lat'], station['long'], timestamp=None,
                       units=Units.SI))
-    print(urls[0])
+    # print(urls[0])
     async_get_weather_forecast(urls, station_list)
 
 
