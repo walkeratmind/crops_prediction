@@ -69,6 +69,7 @@ def data_to_csv(weather_data, data_dir, target_date, filename=None):
     """
     week_data = []
     for data in weather_data:
+        # convert timestamp in simple datetime
         data['time'] = datetime.fromtimestamp(data['time'])
         week_data.append(data)
     weather_data = week_data
@@ -126,7 +127,7 @@ def async_get_weather_forecast(urls, station_list, target_date_timestamp=None):
     print("Fetch weather data...")
     responses = asyncio.run(fetch_all(urls))
 
-    print(type(responses))
+    # print(type(responses))
 
     if target_date_timestamp:
         target_date = datetime.fromtimestamp(target_date_timestamp)
@@ -149,8 +150,8 @@ def async_get_weather_forecast(urls, station_list, target_date_timestamp=None):
         place = {}
         for station in station_list:
             if station['lat'] == response_data_lat and station['long'] == response_data_long:
-                place = {'district': station['district'].lower(),
-                         'formal_name': station['formal_name'].lower()}
+                place = {'district': station['district'].title(),
+                         'formal_name': station['formal_name'].title()}
                 break
 
         # write hourly data to csv
@@ -166,6 +167,25 @@ def async_get_weather_forecast(urls, station_list, target_date_timestamp=None):
         #             target_date)
 
         latlng = {'lat': response_data_lat, 'long': response_data_long}
+        """
+        Convert every timestamp from daily data to simple datetime
+        time, sunriseTime, sunsetTime, temperatureHighTime, temperatureLowTime,
+        apparentTemperatureHighTime, apparentTemperatureLowTime,
+        temperatureMinTime, temperatureMaxTime,
+        apparentTemperatureMinTime, apparentTemperatureMaxTime
+        """
+        daily_data['time'] = datetime.fromtimestamp(daily_data['time'])
+        daily_data['sunriseTime'] = datetime.fromtimestamp(daily_data['sunriseTime'])
+        daily_data['sunsetTime'] = datetime.fromtimestamp(daily_data['sunsetTime'])
+        daily_data['temperatureHighTime'] = datetime.fromtimestamp(daily_data['temperatureHighTime'])
+        daily_data['temperatureLowTime'] = datetime.fromtimestamp(daily_data['temperatureLowTime'])
+        daily_data['apparentTemperatureHighTime'] = datetime.fromtimestamp(daily_data['apparentTemperatureHighTime'])
+        daily_data['apparentTemperatureLowTime'] = datetime.fromtimestamp(daily_data['apparentTemperatureLowTime'])
+        daily_data['temperatureMinTime'] = datetime.fromtimestamp(daily_data['temperatureMinTime'])
+        daily_data['temperatureMaxTime'] = datetime.fromtimestamp(daily_data['temperatureMaxTime'])
+        daily_data['apparentTemperatureMinTime'] = datetime.fromtimestamp(daily_data['apparentTemperatureMinTime'])
+        daily_data['apparentTemperatureMaxTime'] = datetime.fromtimestamp(daily_data['apparentTemperatureMaxTime'])
+
         daily_data_list.append({**place, **latlng, **daily_data})
     # write daily data to csv
     print(f"daily data len: {len(daily_data_list)}")
@@ -191,7 +211,12 @@ def write_daily_data_to_csv(daily_data: list, data_dir, target_date):
 
     daily_dataframe = pd.DataFrame(daily_data)
 
-    daily_dataframe.to_csv(filename)
+    # remove index column
+
+    # sort daily data by district and formal_name
+    daily_dataframe = daily_dataframe.sort_values(by=['district', 'formal_name'])
+
+    daily_dataframe.to_csv(filename, index=False)
 
 
 def main():
