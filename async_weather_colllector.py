@@ -161,10 +161,10 @@ def async_get_weather_forecast(urls, station_list, target_date_timestamp=None):
                     target_date)
 
         # write weekly data to csv
-        # data_to_csv(weekly_data, data_dir +
-        #             '/weekly/{}/{}'.format(place['district'],
-        #                                    place['formal_name']),
-        #             target_date)
+        data_to_csv(weekly_data, data_dir +
+                    '/weekly/{}/{}'.format(place['district'],
+                                           place['formal_name']),
+                    target_date)
 
         latlng = {'lat': response_data_lat, 'long': response_data_long}
         """
@@ -175,7 +175,7 @@ def async_get_weather_forecast(urls, station_list, target_date_timestamp=None):
         temperatureMinTime, temperatureMaxTime,
         apparentTemperatureMinTime, apparentTemperatureMaxTime
         """
-        daily_data['time'] = datetime.fromtimestamp(daily_data['time'])
+        # daily_data['time'] = datetime.fromtimestamp(daily_data['time'])
         daily_data['sunriseTime'] = datetime.fromtimestamp(daily_data['sunriseTime'])
         daily_data['sunsetTime'] = datetime.fromtimestamp(daily_data['sunsetTime'])
         daily_data['precipIntensityMaxTime'] = datetime.fromtimestamp(daily_data['precipIntensityMaxTime'])
