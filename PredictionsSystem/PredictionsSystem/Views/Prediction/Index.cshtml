@@ -1,0 +1,45 @@
+﻿<style>
+    .ui-autocomplete {
+        max-height: 200px;
+        overflow-y: auto;
+        /* prevent horizontal scrollbar */
+        overflow-x: hidden;
+        /* add padding to account for vertical scrollbar */
+        padding-right: 20px;
+    }
+</style>
+<input type="text" id="districtAutocomplete" name="District" />
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<script>
+    $(function () {
+        $("#districtAutocomplete").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: "/api/v1/PredictionApi/GetDistrictList",
+                    type: "get",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    data: {
+                        term: request.term
+                    },
+                    success: function (data) {
+                        debugger
+                        response($.map(data.data, function (item) {
+                            debugger
+                            return {
+                                label: item.district + " (" + item.formalName + ")",
+                                value: item.lat + "," + item.lon
+                            };
+                        }));
+                    }
+                });
+            },
+            select: function (event, ui) {
+                $("#name").val(ui.item.label);
+                $("#value").val(ui.item.value);
+                return false;
+            }
+        });
+    });
+</script>

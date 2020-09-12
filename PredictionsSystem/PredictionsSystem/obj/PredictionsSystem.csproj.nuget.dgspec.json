@@ -1,0 +1,80 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Subodh-PC\\source\\repos\\PredictionsSystem\\PredictionsSystem\\PredictionsSystem.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Subodh-PC\\source\\repos\\PredictionsSystem\\PredictionsSystem\\PredictionsSystem.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Subodh-PC\\source\\repos\\PredictionsSystem\\PredictionsSystem\\PredictionsSystem.csproj",
+        "projectName": "PredictionsSystem",
+        "projectPath": "C:\\Users\\Subodh-PC\\source\\repos\\PredictionsSystem\\PredictionsSystem\\PredictionsSystem.csproj",
+        "packagesPath": "C:\\Users\\Subodh-PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Subodh-PC\\source\\repos\\PredictionsSystem\\PredictionsSystem\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Subodh-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\Subodh-PC\\Downloads\\2.0.29-randhir-6 (1)\\2.0.29-randhir-6": {},
+          "C:\\project\\fly\\2.0.29-randhir-6\\2.0.29-randhir-6": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0-preview.8.20407.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.0-preview.8.20407.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
