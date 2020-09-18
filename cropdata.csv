@@ -1,0 +1,13 @@
+crop,min_rainfall,max_rainfall,fertility,min_temp,max_temp,min_ph,max_ph,soil_type
+Rice,500,1000,2,10,32,3.5,8.5,cl
+Wheat,450,650,2,4,37,6.5,6.5,loamy
+Maize,500,800,1,10,30,5.8,7,ls/cl
+Soybean,300,700,2,,na,6,7,loamy
+Tomato,600,800,0,13,35,6,6.8,loamy
+Potato,500,700,2,5,25,5.5,7,loamy
+Onion,350,550,1,5,25,6,7,sl/hc
+Barley,390,430,1,12,32,6.5,7.5,sl
+Lentils,350,550,2,6,31,5.4,5.6,sl
+Tea,150,250,2,13,32,4.5,5.6,loamy
+Millets,350,500,2,12,40,5.6,6.2,loamy/sandy
+Mustard seeds,50,300,2,5,25,5.5,6.8,loamy
