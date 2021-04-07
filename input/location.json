@@ -1,0 +1,537 @@
+{
+    "Achham": [
+        "Asara Ghat",
+        "Mangalsen"
+    ],
+    "ACHHAM": [
+        "BASTI",
+        "SUGALI"
+    ],
+    "Arghakhanchi": [
+        "RANGSING",
+        "Sandhikharka",
+        "SIDHARA"
+    ],
+    "Baglung": [
+        "Baglung",
+        "Dhorpatan",
+        "Rangkhani"
+    ],
+    "BAGLUNG": [
+        "GALKOT"
+    ],
+    "Baitadi": [
+        "Patan (West)",
+        "Satbanjh"
+    ],
+    "Bajhang": [
+        "Chainpur (West)",
+        "Chainpur Bajhang AWS climate"
+    ],
+    "BAJHANG": [
+        "KALUKHETI",
+        "RAYAL"
+    ],
+    "Bajura": [
+        "Bajura (Martadi)"
+    ],
+    "BAJURA": [
+        "KAILASMANDU",
+        "KOLTI"
+    ],
+    "BANKE": [
+        "Amlekhganj"
+    ],
+    "Banke": [
+        "DHAKERI",
+        "Khajura (Nepalganj)",
+        "Naubasta",
+        "Nepalgunj Airport"
+    ],
+    "Bara": [
+        "Gulariya",
+        "Kalaiya",
+        "Nijgadh",
+        "Parwanipur",
+        "Simara Airport"
+    ],
+    "Bardiya": [
+        "Chisapani(Karnali)",
+        "KUMALGAUN",
+        "Rajapur",
+        "Rani Jaruwa Nursery"
+    ],
+    "BARDIYA": [
+        "MANPUR",
+        "RAMBHAPUR"
+    ],
+    "Bhaktapur": [
+        "Bhaktapur",
+        "Changu Narayan",
+        "Nagarkot",
+        "Sanga"
+    ],
+    "Bhojpur": [
+        "Dingla",
+        "Rampur"
+    ],
+    "Chitawan": [
+        "Bharatpur",
+        "Jhuwani"
+    ],
+    "CHITAWAN": [
+        "BHARATPUR"
+    ],
+    "Chitwan": [
+        "Gobindabasti"
+    ],
+    "CHITWAN": [
+        "MADI KALYANPUR",
+        "MEGHAULI"
+    ],
+    "Dadeldhura": [
+        "Dadeldhura"
+    ],
+    "DADELDHURA": [
+        "Dailekh",
+        "SAHUKHARKA"
+    ],
+    "Dailekh": [
+        "Bale Budha (Tallo Dhungeshwor)"
+    ],
+    "DAILEKH": [
+        "KATTI",
+        "Nayabasti (Dang)",
+        "RANIMATTA"
+    ],
+    "Dang": [
+        "Ghorahi (Masina)",
+        "Ghorai (Dang)",
+        "Koilabas",
+        "PADHAMPUR",
+        "Tulsipur"
+    ],
+    "DANG": [
+        "LALMATIYA",
+        "LAMAHI"
+    ],
+    "DARCHULA": [
+        "Darchula New",
+        "DHAULATIYA (Dallekhdhar)"
+    ],
+    "Darchula": [
+        "Gokuleshwar",
+        "LUMPTHI"
+    ],
+    "Dhading": [
+        "Dhading",
+        "Dhunibesi",
+        "Gajuri",
+        "Majhimtar",
+        "Pakhribas"
+    ],
+    "Dhankuta": [
+        "Barahkshetra",
+        "Dhankuta",
+        "Dhankuta",
+        "Leguwa Ghat",
+        "Muga",
+        "Mul Ghat",
+        "Utinpur"
+    ],
+    "Dhanusa": [
+        "Chisapani Bazar",
+        "Janakpur Airport",
+        "Tulsi"
+    ],
+    "Dolakha": [
+        "Nagdaha",
+        "Charikot",
+        "Dunai",
+        "Jiri"
+    ],
+    "DOLPA": [
+        "KAIGAUN",
+        "Silgadhi Doti"
+    ],
+    "Doti": [
+        "Dipayal (Doti)",
+        "JHINGRANA",
+        "Khaptad",
+        "Kola Gaun"
+    ],
+    "DOTI": [
+        "DUMRAKOT",
+        "GAIRA"
+    ],
+    "GORKHA": [
+        "BARPAK",
+        "Laprak"
+    ],
+    "Gorkha": [
+        "Chhekampar",
+        "CHUMCHET",
+        "Gorkha",
+        "SAMA GAUN"
+    ],
+    "GULMI": [
+        "Darma"
+    ],
+    "Gulmi": [
+        "Musikot",
+        "Tamghas"
+    ],
+    "Humla": [
+        "Simikot"
+    ],
+    "HUMLA": [
+        "Simikot Airport",
+        "THALI"
+    ],
+    "Ilam": [
+        "Ilam Tea Estate",
+        "Himali Gaun",
+        "Kanyam Tea Estate",
+        "Soktim Tea E"
+    ],
+    "Jajarkot": [
+        "BHANU THANA",
+        "Maina Gaun (D.Bas)"
+    ],
+    "Jhapa": [
+        "Anarmani Birta",
+        "Chnadra Gadhi",
+        "Gaida (Kankai)",
+        "Jumla",
+        "Kechana",
+        "Sanischare"
+    ],
+    "Jumla": [
+        "Dipal Gaun",
+        "Jumla"
+    ],
+    "JUMLA": [
+        "JACHA",
+        "TATOPANI"
+    ],
+    "Kabhre": [
+        "Budal (Banepa)",
+        "Dhulikhel",
+        "Dolal Ghat",
+        "Panchkhal"
+    ],
+    "Kailali": [
+        "Dhangadhi",
+        "Godavari(West)",
+        "MALAKHETI",
+        "Sitapur",
+        "Teghari"
+    ],
+    "KALIKOT": [
+        "Mahendra Nagar"
+    ],
+    "Kalikot": [
+        "MANMA",
+        "Nagma"
+    ],
+    "KANCHANPUR": [
+        "DODHARA",
+        "Taulihawa"
+    ],
+    "Kanchanpur": [
+        "HANMANNAGAR"
+    ],
+    "Kapilbastu": [
+        "BANGANGA"
+    ],
+    "KAPILVASTU": [
+        "BAHADUR GANJ",
+        "Sallyan (Kaski)"
+    ],
+    "KASKI": [
+        "BEGNAS"
+    ],
+    "Kaski": [
+        "Begnas Tal",
+        "Bhadaure Deurali",
+        "Ghandruk",
+        "Lamachaur",
+        "Lumle",
+        "Pokhara Airport",
+        "Pokhara Airport"
+    ],
+    "Kathmandu": [
+        "Budhanilakan",
+        "Kathmandu Airport",
+        "Naikap",
+        "Pharping",
+        "Sankhu",
+        "Sivapuri",
+        "Sundarijal",
+        "Tarebhir",
+        "Thankot",
+        "Tokha"
+    ],
+    "Khotang": [
+        "Diktel",
+        "Dwarpa",
+        "Khotang Bazar",
+        "Kurle Ghat"
+    ],
+    "Lalitpur": [
+        "Chapa Gaun",
+        "Godavari",
+        "Khokana",
+        "Khumaltar",
+        "Kritipur (Bagban)",
+        "Lalitpur (Kopundol)",
+        "Lubhu",
+        "Tikathali"
+    ],
+    "Lamiung": [
+        "Khudi Bazar"
+    ],
+    "LAMJUNG": [
+        "BESISHAHAR",
+        "BHORLETAR",
+        "FALENI",
+        "Gausala"
+    ],
+    "Lamjung": [
+        "Gharedhunga"
+    ],
+    "Mahottari": [
+        "Chisapani Gadhi",
+        "Jalesore"
+    ],
+    "Makwanpur": [
+        "Daman",
+        "Hetanuda(Ind. Dist)",
+        "Makwanpur Gadhi",
+        "Markhu Gaun"
+    ],
+    "MAKWANPUR": [
+        "Manang Bhot"
+    ],
+    "Manang": [
+        "GOGA",
+        "Humde",
+        "NAAR",
+        "Phu Gaun"
+    ],
+    "Morang": [
+        "Biratnagar",
+        "Biratnagar Airport",
+        "Gam Shree Nagar",
+        "Haraincha",
+        "Letang",
+        "Mugu"
+    ],
+    "MUGU": [
+        "Jomsom",
+        "SEROGE"
+    ],
+    "Mugu": [
+        "MANGRI",
+        "Rara"
+    ],
+    "Mustang": [
+        "Lete",
+        "Mustang(Lomangthang)",
+        "Ranipauwa (M.Nath)",
+        "Tatopani"
+    ],
+    "Myagdi": [
+        "Bega",
+        "Beni Bazar",
+        "Dumkauli",
+        "Ghorepani",
+        "Muna"
+    ],
+    "Nawalparasi": [
+        "Bara Ghat",
+        "Dumkibas",
+        "Parasi",
+        "Rambas",
+        "Trisuli"
+    ],
+    "Nuwakot": [
+        "Kakani",
+        "Mane Bhanjyang",
+        "Pansayakhola",
+        "Ranipauwa"
+    ],
+    "Okhaldhunga": [
+        "Gandakot",
+        "Okhaldhunga",
+        "Tansen"
+    ],
+    "PALPA": [
+        "ARCHALE",
+        "CHAMEHAT"
+    ],
+    "Palpa": [
+        "BALDYANGGADI",
+        "JALPA"
+    ],
+    "Panchther": [
+        "Angbung",
+        "DEDHGAUNTAR",
+        "DEURALI NAWAL",
+        "Phidim (Panchther)"
+    ],
+    "PARASI": [
+        "BARDAGHAT",
+        "TRIBENI"
+    ],
+    "Parbat": [
+        "Birganj",
+        "Kushma",
+        "Tribeni"
+    ],
+    "PARSA": [
+        "PHOPLI"
+    ],
+    "Parsa": [
+        "SEULIBANG",
+        "THORI"
+    ],
+    "PYUTHAN": [
+        "HANSPUR",
+        "SWARGDWARI"
+    ],
+    "Pyuthan": [
+        "Manthali"
+    ],
+    "Ramechhap": [
+        "Timure"
+    ],
+    "Rasuwa": [
+        "Dhunche",
+        "Gatlang",
+        "KEUR GAUN",
+        "Paigutang"
+    ],
+    "ROLPA": [
+        "DANMAN",
+        "Ramoli Bairiya",
+        "SULICHOUR(SARICHOUR)"
+    ],
+    "Rolpa": [
+        "RULBANG (Juwang)"
+    ],
+    "Routahat": [
+        "Gaur",
+        "Rukumkot",
+        "Shera Gaun"
+    ],
+    "Rukum": [
+        "Butwal",
+        "Chaurjhari Tar",
+        "KOTJHARI",
+        "Musikot(Rukumkot)"
+    ],
+    "Rupandehi": [
+        "Bhairahawa Airport",
+        "Bhairahawa Airport",
+        "Lumbini",
+        "Paklihawa",
+        "SURAYPURA"
+    ],
+    "Salyan": [
+        "PAKHAPANI",
+        "RAMPUR",
+        "Salyan Bazar",
+        "Num"
+    ],
+    "Sankhuwasabha": [
+        "Chainpur (East)",
+        "Chepuwa",
+        "Khadbari",
+        "Tumlingtar"
+    ],
+    "Saptari": [
+        "Barmajhiya",
+        "Pattharkot(East)",
+        "Phatepur",
+        "Rajbiraj"
+    ],
+    "Sarlahi": [
+        "Karmaiya",
+        "Malangwa"
+    ],
+    "Sindhuli": [
+        "Dhap",
+        "Hariharpur Gadhi Valley",
+        "Nepalthok",
+        "Sindhuli Madhi"
+    ],
+    "Sindhupalchok": [
+        "Bahrabise",
+        "Bahunipati",
+        "Chautara",
+        "Sarmathang",
+        "Tarke Ghyang",
+        "Thokarpa"
+    ],
+    "Siraha": [
+        "Chaurikhark",
+        "Lahan",
+        "Namche Bazar"
+    ],
+    "Solukhumbu": [
+        "Chialsa",
+        "Khumjung",
+        "Salleri",
+        "Syangboche",
+        "Tengboche"
+    ],
+    "Sunsari": [
+        "Chatara",
+        "Dharan Bazar",
+        "Pusma Camp",
+        "Tarahara"
+    ],
+    "Surkhet": [
+        "BADHICHAUR",
+        "DANDAGAUN",
+        "Surkhet (Birendra Nagar)"
+    ],
+    "SURKHET": [
+        "RAKAM",
+        "Tisedi"
+    ],
+    "Syangia": [
+        "Chapkot"
+    ],
+    "Syangja": [
+        "PANCHAMUL",
+        "Walling"
+    ],
+    "SYANJA": [
+        "JYAGDI",
+        "MALUNGA",
+        "THAPREK"
+    ],
+    "TANAHU": [
+        "ATRAULITAR",
+        "Bandipur",
+        "KOTAGAUN"
+    ],
+    "Tanahun": [
+        "Damauli"
+    ],
+    "Taplejung": [
+        "Dovan",
+        "Lungthung",
+        "Olangchuhg G",
+        "Taplethok"
+    ],
+    "Terhathum": [
+        "Terhathum"
+    ],
+    "Udayapur": [
+        "Gaighat",
+        "Udayapur Gadhi"
+    ]
+}
