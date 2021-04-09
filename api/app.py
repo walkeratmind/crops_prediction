@@ -40,9 +40,8 @@ class Location(Resource):
         return get_locations()
 
 
-
-api.add_resource(Prediction, '/prediction')
-api.add_resource(Location, '/location')
+api.add_resource(Prediction, '/api/prediction')
+api.add_resource(Location, '/api/location')
 
 if __name__ == '__main__':
     app.run(debug=True)

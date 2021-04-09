@@ -44,4 +44,4 @@ class MinMaxNormalizer:
     def normalize(self, data=None):
         if data is None:
             data = self.data
-        return (data - data.min(axis=0)) / (data.max(axis=0) - data.min(axis=0))
+        return (data  -data.min(axis=0)) / (data.max(axis=0) - data.min(axis=0))
