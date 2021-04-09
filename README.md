@@ -22,3 +22,39 @@ We created a `station_list.csv` file mocking the weather station of [Department 
 
 - weekly - weekly weather of every districts and places
 
+## Project Setup
+
+### Windows
+
+1. Install [Python]()
+
+2. Create Virtualenv:
+
+   windows: `pip install virtualenv`
+
+   linux: `pip install 
+
+### Linux
+
+1. Install Python pip: `sudo apt install python3-pip`
+2. Install virtualenv: `pip3 install virtualenv`
+3. Create virutalenv: `virtualenv venv`
+4. Activate virutalenv: `source venv/bin/activate`
+
+### Common Steps
+
+1. Install requirements.txt `pip install -r requirements.txt`
+
+## Run Async Weather Collector
+
+```python
+python async_weather_collector.py
+```
+
+## Run Flask App
+
+```python
+cd api
+python -m flask run
+```
+
