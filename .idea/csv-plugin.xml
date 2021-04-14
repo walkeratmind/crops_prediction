@@ -17,6 +17,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/input/darksky/daily/2020-09-05.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/input/darksky/daily/2020-09-06.csv">
           <value>
             <Attribute>
