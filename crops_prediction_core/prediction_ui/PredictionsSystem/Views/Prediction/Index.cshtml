@@ -1,0 +1,333 @@
+﻿
+<style>
+    .ui-autocomplete {
+        max-height: 200px;
+        overflow-y: auto;
+        /* prevent horizontal scrollbar */
+        overflow-x: hidden;
+        /* add padding to account for vertical scrollbar */
+        padding-right: 20px;
+    }
+
+
+
+    /*
+       slider css
+          */
+    .range-wrap {
+        position: relative;
+        width: 100%;
+        padding: 1.5em 0; /*  Giving more room for hover  */
+        max-width: 400px;
+    }
+
+        /* Custom Bar */
+        .range-wrap::before {
+            content: "";
+            background: linear-gradient(to right, #0145b8, #00e5e0, #00f25e);
+            width: 100%;
+            height: 8px;
+            display: block;
+            position: absolute;
+            border-radius: 4px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: height 100ms ease;
+        }
+
+        .range-wrap:hover::before {
+            height: 10px;
+        }
+
+    /*  Hide Original */
+    .range {
+        width: 100%;
+        cursor: pointer;
+        opacity: 0;
+    }
+
+    .bubble {
+        background: white;
+        border: 3px solid #cbd2da;
+        position: absolute;
+        border-radius: 50%;
+        width: 2rem;
+        height: 2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none; /* Remove pointer events on Bubble so user can click on the actual thumb beaneath it!  */
+        color: transparent;
+        display: grid;
+        place-items: center; /*  Place the number on the center  */
+        font-weight: bold;
+        transition: color 100ms ease, transform 100ms ease;
+        user-select: none; /*  Prevent Accidentally highlighting the number while sliding the cursor  */
+    }
+
+    .range-wrap:hover .bubble,
+    .range-wrap:focus .bubble {
+        color: black;
+        transform: translateY(-50%) scale(1.5);
+        padding: 0.1em;
+    }
+
+    body {
+        font-family: monospace;
+        height: 100%;
+        display: grid;
+        /*  grid-gap: 5rem;*/
+        /*      place-items: center;
+        padding: 10%;*/
+    }
+</style>
+
+<div id="loading-div-background" style="display: none;">
+    <div id="loading-div" class="ui-corner-all">
+        <div id="loadingbar"><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></div>
+        <h2 style="color:gray;font-weight:normal;">loading loading.........</h2>
+    </div>
+</div>
+<hr />
+
+<div id="hideBox">
+    <fieldset>
+        <div class="form-group">
+            <input type="text" class="form-control mr-sm-2" id="districtAutocomplete" placeholder="Enter Location">
+        </div>
+    </fieldset>
+</div>
+<input type="hidden" name="districtLoc" />
+<div id="displayWeatherInfo">
+
+</div>
+<div id="predictionSection" style="display: none;">
+
+    <div class="col-md-6">
+        <div class="form-group">
+            <h3>Find Suitable Crops </h3>
+        </div>
+    </div>
+    <hr />
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6">
+                <form name="recommendationForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="form-group has-success">
+                                    <label class="form-control-label" for="nit">Nitrogen</label>
+                                    <input type="number" class="form-control" name="nit" id="nit" placeholder="0.00" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group has-success">
+                                    <label class="form-control-label" for="php">Phosphorus</label>
+                                    <input type="number" class="form-control" name="pho" id="pho" placeholder="0.00">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="form-group has-success">
+                                    <label class="form-control-label" for="pot">Potassium</label>
+                                    <input type="number" class="form-control" name="pot" id="pot" placeholder="0.00">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="range-wrap">
+                                    <input type="range" class="range" value="7.3" min="4" max="14" name="ph" id="ph">
+                                    <output class="bubble"></output>
+                                </div>
+                            </div>
+
+                            <!--<-->@*div class="col-md-4">
+                                    <div class="form-group">
+
+                                        <div class="form-group has-success">
+                                            <label class="form-control-label" for="inputValid">PH Value</label>
+                                            <input type="text" class="form-control" id="inputValid">
+                                        </div>
+                                    </div>
+                                </div>*@
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <button type="button" class="btn btn-primary" id="target">Load Recommendations</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h5>Recommendations:</h5>
+                <div id="appendRecommendation">
+
+                </div>
+                <ul>
+                    @*<li style="color:red;font-size:20px">papaya</li>
+                        <li style="color:red;font-size:20px">maize</li>
+                        <li style="color:red;font-size:20px">kidneybeans</li>*@
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/site.js"></script>
+
+<script>
+    let loc;
+    $(function () {
+
+        $("#districtAutocomplete").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: "/api/v1/PredictionApi/GetDistrictList",
+                    type: "get",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    data: {
+                        term: request.term
+                    },
+                    success: function (data) {
+                        response($.map(data.data, function (item) {
+                            return {
+                                label: item.district + "," + item.formalName,
+                                value: item.lat + "," + item.long
+                            };
+                        }));
+                    }
+                });
+            },
+            select: function (event, ui) {
+                debugger;
+                document.getElementById('loading-div-background').style = "block";
+                var x = document.getElementById("hideBox");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+
+                }
+                $("#districtLoc").val(ui.item.label)
+                loc = ui.item.label;
+                var query = "?location=" + ui.item.value;
+                $.ajax({
+                    url: "/Prediction/GetWeather" + query,
+                    type: "get",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        console.log("hello");
+                    },
+                    error: function (req, status, error) {
+                        document.getElementById('displayWeatherInfo').innerHTML = req.responseText;
+                        $("#loading-div-background").css("display", "none");
+                        $("#predictionSection").css("display", "block");
+
+                    }
+                });
+                document.getElementById('districtAutocomplete').value = "";
+
+                var x = document.getElementById("hideBox");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+                return false;
+            }
+        });
+    });
+    $("#target").click(function () {
+        debugger;
+        var a = loc;
+        var formData = {
+            n: $("#nit").val(),
+            p: $("#pho").val(),
+            k: $("#pot").val(),
+            ph: $("#ph").val(),
+            district: loc
+        };
+        $.ajax({
+            url: "/api/v1/PredictionApi/GetRecommendation",
+            type: "POST",
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(formData),
+            success: function (result) {
+
+                $("#nit").val("");
+                $("#pho").val("");
+                $("#pot").val("");
+                $("#ph").val("");
+                let arrList = result.data;
+                var ul = $("<ul >").addClass("some-ul");
+                for (i = 0; i < arrList.length; i++) {
+                    var li = "<li style='color:red; font-size:20px' >" + arrList[i] + "</li>";
+                    ul.append(li);
+                }
+                console.log(ul);
+                console.log(ul[0].innerHTML);
+                document.getElementById('appendRecommendation').innerHTML = ul[0].innerHTML;
+            },
+            error: function (xhr, resp, text) {
+                debugger
+            }
+        })
+        //debugger;
+        //var formData = {
+        //    n: $("#nit").val(),
+        //    p: $("#pho").val(),
+        //    k: $("#pot").val(),
+        //    ph: $("#ph").val(),
+        //    district: 'aaa',
+        //    location: 'bbb',
+        //};
+
+        //$.ajax({
+        //    type: "POST",
+        //    url: "/api/v1/PredictionApi/GetRecommendation",
+        //    data: formData,
+        //    dataType: "json",
+        //    contentType: "application/json",
+        //    encode: true,
+        //    }).done(function (data) {
+        //        debugger;
+        //        console.log(data);
+        //    });
+    });
+
+    const allRanges = document.querySelectorAll(".range-wrap");
+    allRanges.forEach((wrap) => {
+        const range = wrap.querySelector(".range");
+        const bubble = wrap.querySelector(".bubble");
+
+        range.addEventListener("input", () => {
+            setBubble(range, bubble);
+        });
+
+        // setting bubble on DOM load
+        setBubble(range, bubble);
+    });
+
+    function setBubble(range, bubble) {
+        const val = range.value;
+
+        const min = range.min || 0;
+        const max = range.max || 100;
+
+        const offset = Number(((val - min) * 100) / (max - min));
+
+        bubble.textContent = val;
+
+        // yes, 14px is a magic number
+        bubble.style.left = `calc(${offset}% - 14px)`;
+    }
+
+
+</script>

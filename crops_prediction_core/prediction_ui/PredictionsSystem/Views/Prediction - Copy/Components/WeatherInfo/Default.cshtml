@@ -1,0 +1,54 @@
+﻿@using PredictionsSystem.Models
+@model Forecast
+
+<div>
+    <div class="col-md-12 row">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-2">
+            <h5>Wind: <span>@Model.Currently.WindSpeed mph</span></h5>
+        </div>
+        <div class="col-md-2">
+            <h5>Humidity: <span>@Model.Currently.Humidity%</span></h5>
+        </div>
+        <div class="col-md-2">
+            <h5>Dew Pt: <span>@(Model.Currently.DewPoint)˚</span></h5>
+        </div>
+        <div class="col-md-3">
+            <h5>Pressure: <span>@Model.Currently.Pressure mb</span></h5>
+        </div>
+        <div class="col-md-1">
+
+        </div>
+    </div>
+    <div class="row col-md-12">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-2">
+            @{ 
+                string selectedIcon = Model.Currently.Icon + ".svg";
+            }
+            <img src="~/icons/@selectedIcon" width="100" height="100" />
+        </div>
+        <div class="col-md-7">
+            <h3>@Model.Currently.Temperature˚F &nbsp;	&nbsp; @Model.Currently.Summary</h3>
+            <span>
+                Cloud Cover: @Model.Currently.CloudCover% 	&nbsp;	&nbsp;
+                High: @Model.Currently.ApparentTemperature˚F
+            </span>
+        </div>
+    </div>
+    <div class="row col-md-12">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-7">
+            <h4>@Model.Daily.Summary</h4>
+        </div>
+        <div class="col-md-1">
+
+        </div>
+    </div>
+
+</div>

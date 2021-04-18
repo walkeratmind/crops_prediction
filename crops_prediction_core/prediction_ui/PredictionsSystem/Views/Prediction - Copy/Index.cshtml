@@ -1,0 +1,94 @@
+﻿
+<style>
+    .ui-autocomplete {
+        max-height: 200px;
+        overflow-y: auto;
+        /* prevent horizontal scrollbar */
+        overflow-x: hidden;
+        /* add padding to account for vertical scrollbar */
+        padding-right: 20px;
+    }
+</style>
+
+
+<div id="loading-div-background" style="display: none;" >
+    <div id="loading-div" class="ui-corner-all">
+        <div id="loadingbar"><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></div>
+        <h2 style="color:gray;font-weight:normal;">loading loading.........</h2>
+    </div>
+</div>
+<hr />
+
+<div  id="hideBox">
+    <fieldset>
+        <div class="form-group">
+            <input type="text" class="form-control mr-sm-2" id="districtAutocomplete" placeholder="Enter Location">
+        </div>
+    </fieldset>
+</div>
+
+<div id="displayWeatherInfo">
+
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<script>
+    $(function () {
+
+        $("#districtAutocomplete").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: "/api/v1/PredictionApi/GetDistrictList",
+                    type: "get",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    data: {
+                        term: request.term
+                    },
+                    success: function (data) {
+                        response($.map(data.data, function (item) {
+                            return {
+                                label: item.district + " (" + item.formalName + ")",
+                                value: item.lat + "," + item.long
+                            };
+                        }));
+                    }
+                });
+            },
+            select: function (event, ui) {
+                document.getElementById('loading-div-background').style = "block";
+                var x = document.getElementById("hideBox");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+                var query = "?location=" + ui.item.value;
+                $.ajax({
+                    url: "/Prediction/GetWeather" + query,
+                    type: "get",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        console.log("hello");
+                    },
+                    error: function (req, status, error) {
+                        document.getElementById('displayWeatherInfo').innerHTML = req.responseText;
+                        $("#loading-div-background").css("display", "none");
+
+                    }
+                });
+                document.getElementById('districtAutocomplete').value = "";
+              
+                var x = document.getElementById("hideBox");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+                return false;
+            }
+        });
+    });
+</script>
