@@ -43,4 +43,5 @@ class WeatherExtractor:
                           "humidity": weather_attr['humidity'] * 100,
                           "rainfall": random.uniform(40., 250.)}
 
+        print("Weather Data: ", weather_result)
         return weather_result
