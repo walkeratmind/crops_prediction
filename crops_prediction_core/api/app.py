@@ -44,4 +44,4 @@ api.add_resource(Prediction, '/api/prediction')
 api.add_resource(Location, '/api/location')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5000)

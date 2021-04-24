@@ -16,3 +16,4 @@ seaborn
 six
 tqdm
 urllib3
+statsmodels

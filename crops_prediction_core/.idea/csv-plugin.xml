@@ -80,7 +80,21 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/input/darksky/daily/2021-04-24.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/input/darksky/hourly/Achham/Asara Ghat/2020-09-08.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/input/darksky/hourly/Arghakhanchi/Sandhikharka/2020-09-08.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

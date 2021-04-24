@@ -1,5 +1,4 @@
-﻿
-<style>
+﻿<style>
     .ui-autocomplete {
         max-height: 200px;
         overflow-y: auto;
@@ -17,27 +16,28 @@
     .range-wrap {
         position: relative;
         width: 100%;
-        padding: 1.5em 0; /*  Giving more room for hover  */
+        padding: 1.5em 0;
+        /*  Giving more room for hover  */
         max-width: 400px;
     }
 
-        /* Custom Bar */
-        .range-wrap::before {
-            content: "";
-            background: linear-gradient(to right, #0145b8, #00e5e0, #00f25e);
-            width: 100%;
-            height: 8px;
-            display: block;
-            position: absolute;
-            border-radius: 4px;
-            top: 50%;
-            transform: translateY(-50%);
-            transition: height 100ms ease;
-        }
+    /* Custom Bar */
+    .range-wrap::before {
+        content: "";
+        background: linear-gradient(to right, #0145b8, #00e5e0, #00f25e);
+        width: 100%;
+        height: 8px;
+        display: block;
+        position: absolute;
+        border-radius: 4px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: height 100ms ease;
+    }
 
-        .range-wrap:hover::before {
-            height: 10px;
-        }
+    .range-wrap:hover::before {
+        height: 10px;
+    }
 
     /*  Hide Original */
     .range {
@@ -55,13 +55,16 @@
         height: 2rem;
         top: 50%;
         transform: translateY(-50%);
-        pointer-events: none; /* Remove pointer events on Bubble so user can click on the actual thumb beaneath it!  */
+        pointer-events: none;
+        /* Remove pointer events on Bubble so user can click on the actual thumb beaneath it!  */
         color: transparent;
         display: grid;
-        place-items: center; /*  Place the number on the center  */
+        place-items: center;
+        /*  Place the number on the center  */
         font-weight: bold;
         transition: color 100ms ease, transform 100ms ease;
-        user-select: none; /*  Prevent Accidentally highlighting the number while sliding the cursor  */
+        user-select: none;
+        /*  Prevent Accidentally highlighting the number while sliding the cursor  */
     }
 
     .range-wrap:hover .bubble,
@@ -118,7 +121,8 @@
                             <div class="form-group">
                                 <div class="form-group has-success">
                                     <label class="form-control-label" for="nit">Nitrogen</label>
-                                    <input type="number" class="form-control" name="nit" id="nit" placeholder="0.00" required>
+                                    <input type="number" class="form-control" name="nit" id="nit" placeholder="0.00"
+                                        required>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -143,13 +147,13 @@
                             </div>
 
                             <!--<-->@*div class="col-md-4">
-                                    <div class="form-group">
+                                <div class="form-group">
 
-                                        <div class="form-group has-success">
-                                            <label class="form-control-label" for="inputValid">PH Value</label>
-                                            <input type="text" class="form-control" id="inputValid">
-                                        </div>
-                                    </div>
+                                <div class="form-group has-success">
+                                <label class="form-control-label" for="inputValid">PH Value</label>
+                                <input type="text" class="form-control" id="inputValid">
+                                </div>
+                                </div>
                                 </div>*@
                         </div>
                         <div class="col-md-6">
