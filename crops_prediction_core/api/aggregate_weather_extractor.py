@@ -4,8 +4,8 @@ import random
 
 
 class WeatherExtractor:
-    def __init__(self):
-        self.data_dir = "../input/darksky/daily"
+    def __init__(self, data_dir= "../input/darksky/daily"):
+        self.data_dir = data_dir
 
     def fetch_place_weather(self, district: str, location: str) -> dict:
         """

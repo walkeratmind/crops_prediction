@@ -1,0 +1,29 @@
+name,description,image_url,min_growth_time,max_growth_time,growth_unit
+rice,"Rice, (Oryza sativa), edible starchy cereal grain and the grass plant (family Poaceae) by which it is produced",,3,6,months
+maize,"Corn, (Zea mays), also called Indian corn or maize, cereal plant of the grass family (Poaceae) and its edible grain",,60,100,days
+chickpea,"Chickpea, (Cicer arietinum), also called garbanzo bean or Bengal gram, annual plant of the pea family (Fabaceae), widely grown for its nutritious seeds",,80,100,days
+Kidney bean,The kidney bean is a variety of the common bean. It is named for its visual resemblance in shape and � for the red variety � colour to a human kidney,,50,65,days
+Pigeon pea,"The pigeon pea, also known as pigeonpea, red gram, tur, or gungo peas in Jamaica, is a perennial legume from the family Fabaceae",,60,70,days
+Moth bean,"Vigna aconitifolia is a drought-resistant legume, commonly grown in arid and semi-arid regions of India. It is commonly called mat bean, moth bean, matki, Turkish gram or dew bean",,75,90,days
+Mung bean,"The mung bean, alternatively known as the green gram, maash, moong, monggo, or munggo is a plant species in the legume family",,90,120,days
+blackgram,"Vigna mungo, the black gram, urad bean, ulundu paruppu, minapa pappu, mungo bean or black matpe bean is a bean grown in South Asia",,60,70,days
+lentil,"The lentil is an edible legume. It is an annual plant known for its lens-shaped seeds. It is about 40 cm tall, and the seeds grow in pods, usually with two seeds in each",,80,110,days
+pomegranate,"The pomegranate is a fruit-bearing deciduous shrub in the family Lythraceae, subfamily Punicoideae, that grows between 5 and 10 m tall. The pomegranate was originally described throughout the Mediterranean region",,4,5,years
+banana,"A banana is an elongated, edible fruit � botanically a berry � produced by several kinds of large herbaceous flowering plants in the genus Musa. In some countries, bananas used for cooking may be called ""plantains"", distinguishing them from dessert bananas",,9,12,months
+mango,"A mango is a stone fruit produced from numerous species of tropical trees belonging to the flowering plant genus Mangifera, cultivated mostly for their edible fruit. Most of these species are found in nature as wild mangoes",,5,8,years
+grapes,"A grape is a fruit, botanically a berry, of the deciduous woody vines of the flowering plant genus Vitis. Grapes can be eaten fresh as table grapes or they can be used for making wine, jam, grape juice, jelly, grape seed extract, raisins, vinegar, and grape seed oil",,2.5,3,years
+watermelon,"Watermelon is a flowering plant species of the Cucurbitaceae family. A scrambling and trailing vine-like plant, it was originally domesticated in Africa. It is a highly cultivated fruit worldwide, with more than 1,000 varieties",,70,75,days
+muskmelon,"Cucumis melo, also known as melon, is a species of Cucumis that has been developed into many cultivated varieties. The fruit is a pepo. The flesh is either sweet or bland, with or without a musky aroma, and the rind can be smooth, ribbed, wrinkled, or netted",,80,90,days
+apple,"An apple is an edible fruit produced by an apple tree. Apple trees are cultivated worldwide and are the most widely grown species in the genus Malus. The tree originated in Central Asia, where its wild ancestor, Malus sieversii, is still found today",,5,8,years
+orange,"The orange is the fruit of various citrus species in the family Rutaceae; it primarily refers to Citrus � sinensis, which is also called sweet orange, to distinguish it from the related Citrus � aurantium, referred to as bitter orange",,3,5,years
+coconut,"The coconut tree is a member of the palm tree family and the only living species of the genus Cocos. The term ""coconut"" can refer to the whole coconut palm, the seed, or the fruit, which botanically is a drupe, not a nut",,6,10,years
+cotton,"Gossypium is a genus of flowering plants in the tribe Gossypieae of the mallow family, Malvaceae, from which cotton is harvested. It is native to tropical and subtropical regions of the Old and New Worlds",,150,180,days
+jute,"Jute is a long, soft, shiny bast fiber that can be spun into coarse, strong threads. It is produced from flowering plants in the genus Corchorus, which is in the mallow family Malvaceae. The primary source of the fiber is Corchorus olitorius, but it is considered inferior to Corchorus capsularis",,120,150,days
+coffee,"Coffea is a genus of flowering plants in the family Rubiaceae. Coffea species are shrubs or small trees native to tropical and southern Africa and tropical Asia. The seeds of some species, called coffee beans, are used to flavor various beverages and products",,3,4,years
+Tea,,,2,3,years
+Mustard,,,,,
+Millet,,,,,
+Soyabean,,,,,
+Potato,,,,,
+Dragon Fruit,,,,,
+Pumpkin,,,,,
